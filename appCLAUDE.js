@@ -10,7 +10,7 @@ const products = [
   { id: 4, name: 'Stone Cold',   sub: 'Slate grey essential',     price: 36, color: '#9ca3a8', emoji: '🪨', tag: ''     },
   { id: 5, name: 'Desert Rose',  sub: 'Terracotta pigment dye',   price: 44, color: '#c47a5a', emoji: '🌵', tag: 'hot'  },
   { id: 6, name: 'Alpine',       sub: 'Muted forest green',       price: 38, color: '#5a7a5a', emoji: '🌲', tag: 'new'  },
-  { id: 7, name: 'Cloud Nine',   sub: 'Ultra-soft white',         price: 32, color: '#f8f4ee', emoji: '☁️', tag: 'sale' },
+  { id: 7, name: 'Cloud Nine',   sub: 'Ultra-soft white',         price: 32, color: '#f8f4ee', image: 'CloudNine.jpg', tag: 'sale' },
   { id: 8, name: 'Midnight',     sub: 'Deep navy relaxed fit',    price: 46, color: '#1e2a42', emoji: '🌙', tag: ''     },
 ];
 
@@ -22,7 +22,11 @@ function renderProducts() {
   const grid = document.getElementById('product-grid');
   grid.innerHTML = products.map(p => `
     <div class="card" onclick="addToCart(${p.id})">
-      <div class="card-img" style="background:${p.color}">${p.emoji}</div>
+      <div class="card-img${p.image ? ' has-photo' : ''}" style="background:${p.color}">
+        ${p.image
+          ? `<img src="${p.image}" alt="${p.name} t-shirt" />`
+          : p.emoji}
+      </div>
       <div class="card-body">
         ${p.tag ? `<span class="tag tag-${p.tag}">${p.tag}</span><br>` : ''}
         <h3>${p.name}</h3>
@@ -78,7 +82,11 @@ function renderCart() {
 
   itemsEl.innerHTML = cart.map(item => `
     <div class="cart-item">
-      <div class="cart-item-img" style="background:${item.color}">${item.emoji}</div>
+      <div class="cart-item-img${item.image ? ' has-photo' : ''}" style="background:${item.color}">
+        ${item.image
+          ? `<img src="${item.image}" alt="${item.name} t-shirt" />`
+          : item.emoji}
+      </div>
       <div class="cart-item-info">
         <h4>${item.name}</h4>
         <p>${item.sub}</p>
