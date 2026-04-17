@@ -1,112 +1,128 @@
-<!DOCTYPE html>
+g<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Threadhaus — Premium Tees</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Threadhaus — Premium Tees</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styleCLAUDE.css" />
+  </head>
+  <body>
+    <div id="toast" class="toast"></div>
 
-<div id="toast" class="toast"></div>
+    <nav>
+      <h1>THREADHAUS</h1>
+      <button class="cart-btn" onclick="showCart()">
+        <span>Cart</span>
+        <span class="cart-badge" id="cart-count">0</span>
+      </button>
+    </nav>
 
-<nav>
-  <h1>THREADHAUS</h1>
-  <button class="cart-btn" onclick="showCart()">
-    <span>Cart</span>
-    <span class="cart-badge" id="cart-count">0</span>
-  </button>
-</nav>
-
-<!-- Shop Screen -->
-<div id="shop-screen" class="screen active">
-  <div class="hero">
-    <h2>Premium Tees,<br>No Nonsense.</h2>
-    <p>Crafted for the everyday rebel</p>
-  </div>
-  <div class="products">
-    <h2>The Collection</h2>
-    <div class="grid" id="product-grid"></div>
-  </div>
-</div>
-
-<!-- Cart Screen -->
-<div id="cart-screen" class="screen">
-  <div class="cart-panel">
-    <button class="back-link" onclick="showShop()">← Back to shop</button>
-    <h2>Your Cart</h2>
-    <div id="cart-items"></div>
-    <div id="cart-total-section"></div>
-  </div>
-</div>
-
-<!-- Checkout Screen -->
-<div id="checkout-screen" class="screen">
-  <div class="checkout-panel">
-    <button class="back-link" onclick="showCart()">← Back to cart</button>
-    <h2>Checkout</h2>
-    <p class="sub-h">Free shipping on orders over $75</p>
-    <div class="order-mini" id="order-summary-mini"></div>
-
-    <div class="form-section">
-      <h3>Contact</h3>
-      <div class="form-row full">
-        <label>Email<input type="email" placeholder="you@example.com" /></label>
+    <!-- Shop Screen -->
+    <div id="shop-screen" class="screen active">
+      <div class="hero">
+        <h2>Premium Tees,<br />No Nonsense.</h2>
+        <p>Crafted for the everyday rebel</p>
+      </div>
+      <div class="products">
+        <h2>The Collection</h2>
+        <div class="grid" id="product-grid"></div>
       </div>
     </div>
 
-    <div class="form-section">
-      <h3>Shipping address</h3>
-      <div class="form-row">
-        <label>First name<input type="text" placeholder="Alex" /></label>
-        <label>Last name<input type="text" placeholder="Morgan" /></label>
-      </div>
-      <div class="form-row full">
-        <label>Address<input type="text" placeholder="123 Main St" /></label>
-      </div>
-      <div class="form-row">
-        <label>City<input type="text" placeholder="Chicago" /></label>
-        <label>ZIP<input type="text" placeholder="60601" /></label>
-      </div>
-      <div class="form-row full">
-        <label>Country
-          <select>
-            <option>United States</option>
-            <option>Canada</option>
-            <option>United Kingdom</option>
-            <option>Australia</option>
-          </select>
-        </label>
+    <!-- Cart Screen -->
+    <div id="cart-screen" class="screen">
+      <div class="cart-panel">
+        <button class="back-link" onclick="showShop()">← Back to shop</button>
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total-section"></div>
       </div>
     </div>
 
-    <div class="form-section">
-      <h3>Payment</h3>
-      <div class="form-row full">
-        <label>Card number<input type="text" placeholder="1234 5678 9012 3456" /></label>
-      </div>
-      <div class="form-row">
-        <label>Expiry<input type="text" placeholder="MM / YY" /></label>
-        <label>CVV<input type="text" placeholder="123" /></label>
+    <!-- Checkout Screen -->
+    <div id="checkout-screen" class="screen">
+      <div class="checkout-panel">
+        <button class="back-link" onclick="showCart()">← Back to cart</button>
+        <h2>Checkout</h2>
+        <p class="sub-h">Free shipping on orders over $75</p>
+        <div class="order-mini" id="order-summary-mini"></div>
+
+        <div class="form-section">
+          <h3>Contact</h3>
+          <div class="form-row full">
+            <label
+              >Email<input type="email" placeholder="you@example.com"
+            /></label>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Shipping address</h3>
+          <div class="form-row">
+            <label>First name<input type="text" placeholder="Alex" /></label>
+            <label>Last name<input type="text" placeholder="Morgan" /></label>
+          </div>
+          <div class="form-row full">
+            <label
+              >Address<input type="text" placeholder="123 Main St"
+            /></label>
+          </div>
+          <div class="form-row">
+            <label>City<input type="text" placeholder="Chicago" /></label>
+            <label>ZIP<input type="text" placeholder="60601" /></label>
+          </div>
+          <div class="form-row full">
+            <label
+              >Country
+              <select>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+                <option>Australia</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Payment</h3>
+          <div class="form-row full">
+            <label
+              >Card number<input type="text" placeholder="1234 5678 9012 3456"
+            /></label>
+          </div>
+          <div class="form-row">
+            <label>Expiry<input type="text" placeholder="MM / YY" /></label>
+            <label>CVV<input type="text" placeholder="123" /></label>
+          </div>
+        </div>
+
+        <button class="place-order-btn" onclick="placeOrder()">
+          Place Order →
+        </button>
       </div>
     </div>
 
-    <button class="place-order-btn" onclick="placeOrder()">Place Order →</button>
-  </div>
-</div>
+    <!-- Success Screen -->
+    <div id="success-screen" class="screen">
+      <div class="success-panel">
+        <div class="success-icon">✓</div>
+        <h2>Order Placed!</h2>
+        <p>
+          Thanks for shopping with Threadhaus. Your order is confirmed and will
+          ship in 2–4 business days. Check your inbox for a receipt.
+        </p>
+        <button class="success-btn" onclick="resetStore()">
+          Shop More Tees
+        </button>
+      </div>
+    </div>
 
-<!-- Success Screen -->
-<div id="success-screen" class="screen">
-  <div class="success-panel">
-    <div class="success-icon">✓</div>
-    <h2>Order Placed!</h2>
-    <p>Thanks for shopping with Threadhaus. Your order is confirmed and will ship in 2–4 business days. Check your inbox for a receipt.</p>
-    <button class="success-btn" onclick="resetStore()">Shop More Tees</button>
-  </div>
-</div>
-
-<script src="app.js"></script>
-</body>
+    <script src="appCLAUDE.js"></script>
+  </body>
 </html>
